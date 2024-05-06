@@ -9,6 +9,7 @@
           :name="friend.name"
           :phone-number="friend.phone"
           :email-address="friend.email"
+          :is-favorite="friend.isFavorite"
         ></friend-contact>
       </li>
     </ul>
@@ -25,12 +26,14 @@
             name: 'Manuel Lorenz',
             phone: '01234 5678 991',
             email: 'manuel@localhost.com',
+            isFavorite: true,
           },
           {
             id: 'julie',
             name: 'Julie Jones',
             phone: '09876 543 221',
             email: 'julie@localhost.com',
+            isFavorite: false,
           }
         ]
       }
