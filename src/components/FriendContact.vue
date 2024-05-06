@@ -12,12 +12,34 @@
 
 <script>
   export default {
-    props: [
-      'name',
-      'phoneNumber',
-      'emailAddress',
-      'isFavorite'
-    ],
+    // props: [
+    //   'name',
+    //   'phoneNumber',
+    //   'emailAddress',
+    //   'isFavorite'
+    // ],
+    props: {
+      name: {
+        type: String,
+        required: true
+      },
+      phoneNumber: {
+        type: String,
+        required: true
+      },
+      emailAddress: {
+        type: String,
+        required: true
+      },
+      isFavorite: {
+        type: Boolean,
+        required: false,
+        default: false,
+        validator: function(value) {
+          return typeof value === 'boolean';
+        }
+      }
+    },
     data() {
       return {
         detailsAreVisible: false,
