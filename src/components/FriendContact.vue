@@ -44,6 +44,16 @@
         }
       }
     },
+    // emits: ['toggle-favorite'],
+    emits: {
+      'toggle-favorite': function(friendId) {
+        if (typeof friendId === 'string') {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
     data() {
       return {
         detailsAreVisible: false
