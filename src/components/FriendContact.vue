@@ -7,6 +7,7 @@
       <li><strong>Phone:</strong> {{ phoneNumber}}</li>
       <li><strong>Email:</strong> {{ emailAddress }}</li>
     </ul>
+    <button @click="$emit('delete', id)">Delete</button>
   </li>
 </template>
 
@@ -44,16 +45,16 @@
         }
       }
     },
-    // emits: ['toggle-favorite'],
-    emits: {
-      'toggle-favorite': function(friendId) {
-        if (typeof friendId === 'string') {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    },
+    emits: ['toggle-favorite', 'delete'],
+    // emits: {
+    //   'toggle-favorite': function(friendId) {
+    //     if (typeof friendId === 'string') {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   }
+    // },
     data() {
       return {
         detailsAreVisible: false
